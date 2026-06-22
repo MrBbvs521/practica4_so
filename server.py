@@ -5,7 +5,14 @@
 
 import os
 import numpy as np
+
+# --- SOLUCIÓN PARA ENTORNOS HEADLESS / WSL ---
+# Forzamos a Matplotlib a usar el backend 'Agg' (no interactivo/sin interfaz gráfica).
+# Esto evita que el script falle al intentar abrir una ventana de pantalla en WSL.
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+
 from flask import Flask, request, jsonify
 
 # Configuración del servidor Flask

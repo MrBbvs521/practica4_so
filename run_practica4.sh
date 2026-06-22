@@ -25,8 +25,10 @@ if [[ ! -f "$CPP_SRC" ]]; then
     exit 1
 fi
 
-echo "[Bash 2/6] Compilando el cliente C++ con estándar C++17 y librerías dinámicas..."
-g++ -std=c++17 "$CPP_SRC" -lcurl -o main
+echo "[Bash 2/6] Compilando el cliente C++ con estándar C++17 y enlace dinámico de curl..."
+# CORRECCIÓN DE SO: Añadimos explícitamente '-lcurl' al final de la orden de compilación
+# para que el linker resuelva las referencias de las llamadas socket HTTP.
+g++ -std=c++17 "$CPP_SRC" -o main -lcurl
 echo "[OK] Compilación completada con éxito."
 
 # 3. CONTROL DE PUERTOS DE CONEXIÓN RESIDUALES (Failsafe de Red)
