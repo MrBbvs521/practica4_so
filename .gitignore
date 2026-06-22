@@ -1,0 +1,34 @@
+==============================================================================
+
+Archivo de exclusión de Git - Práctica 4
+
+==============================================================================
+
+
+#ejecutables compilados de C++
+main
+*.o
+*.out
+*.exe
+
+
+# Archivos de imágenes táctiles generadas
+tactile_images/
+*.pdf
+
+# Archivos de caché y entornos virtuales
+pycache/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+venv/
+.venv/
+env/
+*.log
+
+# Archivos de configuración de IDEs y sistemas operativos
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
